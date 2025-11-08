@@ -14,6 +14,7 @@ import {
   BoltIcon,
   ClipboardDocumentListIcon,
   Squares2X2Icon,
+  SparklesIcon,
 } from "@heroicons/react/24/solid"
 
 export default function BottomNav({ activeTab, setActiveTab }) {
@@ -21,6 +22,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
   const [isDesktop, setIsDesktop] = useState(false)
 
   const allTabs = [
+    { key: "landing", label: "Welcome", icon: SparklesIcon },
     { key: "advancedDashboard", label: "Home", icon: HomeIcon },
     { key: "dashboard", label: "Dashboard", icon: ChartBarIcon },
     // { key: "energy", label: "Energy", icon: BoltIcon },
@@ -33,7 +35,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
     { key: "map", label: "Map", icon: MapIcon },
   ]
 
-  const primaryKeys = ["advancedDashboard", "dashboard", "energy", "logs"]
+  const primaryKeys = ["landing", "advancedDashboard", "dashboard", "logs"]
   const primaryTabs = allTabs.filter((t) => primaryKeys.includes(t.key))
   const tabsToShow = isDesktop ? allTabs : primaryTabs
 

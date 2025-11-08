@@ -16,8 +16,10 @@ import { AnimatePresence, motion } from "framer-motion"
 import { loadData, saveData } from "./utils/storage"
 import Energy from "./screens/Energy"
 import Logs from "./screens/Logs"
+import Landing from "./screens/Landing"
 
 const screens = {
+  landing: Landing,
   dashboard: Dashboard,
   impact: Impact,
   actions: Actions,
@@ -33,7 +35,7 @@ const screens = {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("dashboard")
+  const [activeTab, setActiveTab] = useState("landing")
 
   // global footprint state
   const [footprint, setFootprint] = useState({
@@ -63,22 +65,25 @@ export default function App() {
   }, [footprint])
 
   const ActiveScreen = screens[activeTab]
+  const isLanding = activeTab === "landing"
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 font-inter">
-      <header className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-5 shadow-sm sticky top-0 z-10">
-        <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-              </svg>
+      {!isLanding && (
+        <header className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-5 shadow-sm sticky top-0 z-10">
+          <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
+                </svg>
+              </div>
+              <h1 className="text-xl md:text-2xl font-semibold tracking-tight">TwinEnergy</h1>
             </div>
-            <h1 className="text-xl md:text-2xl font-semibold tracking-tight">TwinEnergy</h1>
+            <p className="text-sm text-emerald-100 hidden md:block">Track. Reduce. Impact.</p>
           </div>
-          <p className="text-sm text-emerald-100 hidden md:block">Track. Reduce. Impact.</p>
-        </div>
-      </header>
+        </header>
+      )}
 
       <main className="flex-1 container mx-auto w-full px-4 md:px-8 py-8 pb-[64px]">
         <AnimatePresence mode="wait">
@@ -89,7 +94,7 @@ export default function App() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.18 }}
           >
-            <ActiveScreen footprint={footprint} setFootprint={setFootprint} history={history} setHistory={setHistory} />
+            <ActiveScreen footprint={footprint} setFootprint={setFootprint} history={history} setHistory={setHistory} setActiveTab={setActiveTab} />
           </motion.div>
         </AnimatePresence>
       </main>
