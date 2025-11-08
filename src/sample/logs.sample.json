@@ -1,0 +1,130 @@
+[
+  {
+    "_id": "101",
+    "op": "READ_LIST",
+    "duration": 12.5,
+    "details": { "query": {}, "count": 3, "total": 3 },
+    "createdAt": "2025-03-22T12:00:00.000Z",
+    "updatedAt": "2025-03-22T12:00:00.000Z"
+  },
+  {
+    "_id": "102",
+    "op": "CREATE",
+    "duration": 3.2,
+    "details": { "id": "1", "body": { "sensorId": "S-1001", "powerOutput": 245.7 } },
+    "createdAt": "2025-03-21T10:00:00.000Z",
+    "updatedAt": "2025-03-21T10:00:00.000Z"
+  },
+  {
+    "_id": "103",
+    "op": "CREATE",
+    "duration": 3.0,
+    "details": { "id": "2", "body": { "sensorId": "S-1002", "powerOutput": 198.4 } },
+    "createdAt": "2025-03-21T10:05:00.000Z",
+    "updatedAt": "2025-03-21T10:05:00.000Z"
+  },
+  {
+    "_id": "104",
+    "op": "CREATE_ERROR",
+    "duration": 2.4,
+    "details": { "error": "Validation failed: powerOutput is required" },
+    "createdAt": "2025-03-21T10:06:00.000Z",
+    "updatedAt": "2025-03-21T10:06:00.000Z"
+  },
+  {
+    "_id": "105",
+    "op": "READ_LIST",
+    "duration": 8.6,
+    "details": { "query": { "location": "Plant-A", "minPower": 200 }, "count": 2, "total": 2 },
+    "createdAt": "2025-03-22T12:10:00.000Z",
+    "updatedAt": "2025-03-22T12:10:00.000Z"
+  },
+  {
+    "_id": "106",
+    "op": "UPDATE",
+    "duration": 5.1,
+    "details": { "id": "2", "changes": { "temperature": 30.2 } },
+    "createdAt": "2025-03-22T13:00:00.000Z",
+    "updatedAt": "2025-03-22T13:00:00.000Z"
+  },
+  {
+    "_id": "107",
+    "op": "UPDATE_NOT_FOUND",
+    "duration": 4.8,
+    "details": { "id": "9999" },
+    "createdAt": "2025-03-22T13:05:00.000Z",
+    "updatedAt": "2025-03-22T13:05:00.000Z"
+  },
+  {
+    "_id": "108",
+    "op": "DELETE",
+    "duration": 6.0,
+    "details": { "id": "1" },
+    "createdAt": "2025-03-22T14:20:00.000Z",
+    "updatedAt": "2025-03-22T14:20:00.000Z"
+  },
+  {
+    "_id": "109",
+    "op": "DELETE_NOT_FOUND",
+    "duration": 5.7,
+    "details": { "id": "4040" },
+    "createdAt": "2025-03-22T14:25:00.000Z",
+    "updatedAt": "2025-03-22T14:25:00.000Z"
+  },
+  {
+    "_id": "110",
+    "op": "READ_LIST_ERROR",
+    "duration": 1.9,
+    "details": { "error": "Timeout while querying database" },
+    "createdAt": "2025-03-22T15:00:00.000Z",
+    "updatedAt": "2025-03-22T15:00:00.000Z"
+  },
+  {
+    "_id": "201",
+    "op": "READ_LIST",
+    "duration": 10.4,
+    "details": {
+      "vendor": "flipkart",
+      "receivedAt": "2025-03-22T16:09:30.000Z",
+      "query": { "orders": true }
+    },
+    "createdAt": "2025-03-22T16:09:31.000Z",
+    "updatedAt": "2025-03-22T16:09:31.000Z"
+  },
+  {
+    "_id": "202",
+    "op": "CREATE",
+    "duration": 4.2,
+    "details": {
+      "source": "flipkart",
+      "receivedAt": "2025-03-22T16:12:48.000Z",
+      "order": {
+        "id": "ODRX12345",
+        "purchasedAt": "2025-03-22T16:12:45.000Z",
+        "total": 12999,
+        "currency": "INR"
+      },
+      "timeline": [
+        { "label": "entered", "time": "2025-03-22T16:10:12.000Z" },
+        { "label": "added_to_cart", "time": "2025-03-22T16:11:03.000Z" },
+        { "label": "purchased", "time": "2025-03-22T16:12:45.000Z" }
+      ]
+    },
+    "createdAt": "2025-03-22T16:12:49.000Z",
+    "updatedAt": "2025-03-22T16:12:49.000Z"
+  },
+  {
+    "_id": "203",
+    "op": "READ_LIST",
+    "duration": 7.8,
+    "details": {
+      "source": "flipkart",
+      "receivedAt": "2025-03-22T16:20:00.000Z",
+      "query": { "orders": true, "since": "2025-03-22" },
+      "count": 1,
+      "total": 1
+    },
+    "createdAt": "2025-03-22T16:20:01.000Z",
+    "updatedAt": "2025-03-22T16:20:01.000Z"
+  }
+]

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced base typography and color scheme for professional appearance */
+body {
+  font-family: "Inter", sans-serif;
+  @apply bg-slate-50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced input styling */
+input[type="checkbox"] {
+  @apply cursor-pointer;
+}
+
+input[type="range"] {
+  @apply appearance-none w-full h-2 bg-slate-100 rounded-lg cursor-pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-emerald-600 rounded-full cursor-pointer shadow-md hover:shadow-lg hover:bg-emerald-700 transition-all;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply w-5 h-5 bg-emerald-600 rounded-full cursor-pointer shadow-md hover:shadow-lg hover:bg-emerald-700 transition-all border-0;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-emerald-200 text-slate-900;
+}

@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "_id": "1",
+      "sensorId": "S-1001",
+      "powerOutput": 245.7,
+      "temperature": 32.1,
+      "location": "Plant-A",
+      "createdAt": "2025-03-20T10:12:00.000Z",
+      "updatedAt": "2025-03-20T10:12:00.000Z"
+    },
+    {
+      "_id": "2",
+      "sensorId": "S-1002",
+      "powerOutput": 198.4,
+      "temperature": 29.3,
+      "location": "Plant-B",
+      "createdAt": "2025-03-21T08:45:00.000Z",
+      "updatedAt": "2025-03-21T08:45:00.000Z"
+    },
+    {
+      "_id": "3",
+      "sensorId": "S-1003",
+      "powerOutput": 302.9,
+      "temperature": 33.6,
+      "location": "Plant-A",
+      "createdAt": "2025-03-22T14:30:00.000Z",
+      "updatedAt": "2025-03-22T14:30:00.000Z"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 3,
+    "totalPages": 1,
+    "sortBy": "createdAt",
+    "order": "desc",
+    "filters": {}
+  }
+}
